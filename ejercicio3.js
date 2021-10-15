@@ -38,3 +38,4 @@ function temporizador(minutos = 0, segundos) {
     }
 
 }
+//falta meter los segundos en 2 etiquetas p
