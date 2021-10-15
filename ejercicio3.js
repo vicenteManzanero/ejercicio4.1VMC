@@ -32,8 +32,7 @@ function temporizador(minutos = 0, segundos) {
             }
             //esta es la parte que hace que se vea por consola la cuenta atrás
             let elemento = doc.createElement("p");
-            elemento.innerHTML = `${minutos} : ${segundos}`;
-            doc.getElementById("temporizador").appendChild(elemento);
+            doc.getElementById("temporizador").innerHTML = `${minutos} : ${segundos}`;
             segundos--;
         }, 1000);
     }
