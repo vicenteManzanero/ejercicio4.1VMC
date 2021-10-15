@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Temporizador</h1>
+    <label for="Min">Min : </label>
+    <input type="text" name="Min" id="min">
+    <br>
+    <label for="Seg">Seg : </label>
+    <input type="text" name="Seg" id="seg">
+    <br>
+    <br>
+    <button
+        onclick="temporizador(parseInt(doc.getElementById('min').value),parseInt(doc.getElementById('seg').value));">Enviar</button>
+    <div id="temporizador"></div>
+    <br>
+    <script src="ejercicio3.js"></script>
+</body>
+
+</html>
