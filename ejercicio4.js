@@ -11,16 +11,15 @@ código necesario para que la pulsar sobre los botones realice las siguientes ac
 //Instrucción para optimizar el código
 
 let doc = document;
-
-function anadirFila() {
 //este es el contador paramodificar los id's de cada fila
 var contador = 1;
+function anadirFila() {
 //Primero obtengo el valor del texto y lo guardo en una variable
 let texto = doc.getElementById("texto").value;
 //Creo la etiqueta tr que va a contener los td's
 let tr = doc.createElement("tr");
 //Dentro del td introdzco doto lo que quiero que se vea en la tabla
-tr.innerHTML = `<td id="fila${contador}">${texto}</td><td><button onclick="toCani('fila${contador}');">Caniar</button></td>`;
+tr.innerHTML = `<td onmouseover='this.style.background="aqua" ' onmouseout='this.style.background="white" ' id="fila${contador}">${texto}</td><td><button onclick="toCani(id='fila${contador}');">Caniar</button></td>`;
 //incremento el id para que se incremente el id de cada fila
 contador++;
 //Lo añado a la tabla
@@ -30,8 +29,10 @@ doc.getElementById("bodyTabla").appendChild(tr);
 
 
 function toCani(frase) {
+  console.log(`fila${contador}`);
+  let caniado = doc.getElementById(`fila${contador}`).innerText;
     //convierto la frase introducida a un array para recorrerlo más cómodo
-    let cadena2 = Array.from(frase);
+    let cadena2 = Array.from(caniado);
     //éste array es lo que retorno
     let cadenaRetorno = [];
   //hago un for y cambio las "c" mayúsculas y minúsculas por k's
@@ -50,8 +51,12 @@ function toCani(frase) {
     }
     //antes de hacer el retorno, le concateno las HHH
     //return cadenaRetorno.join("") + "HHH";
-    let caniado = doc.getElementById(`fila${contador}`);
+    let resultado = cadenaRetorno.join("") + "HHH"
+    doc.getElementById(`fila${contador}`).innerText = resultado;
+    console.log(resultado);
   }
 
   //una cadena cani es como esta
   //falta la parte cani
+
+  
