@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        p{
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +26,10 @@
         onclick="temporizador(parseInt(doc.getElementById('min').value),parseInt(doc.getElementById('seg').value));">Enviar</button>
         <br>
         <br>
-    <div id="temporizador"></div>
+    <div id="temporizador">
+        <p id="minutos"></p>
+        <p id="segundos"></p>
+    </div>
     <br>
     <script src="ejercicio3.js"></script>
 </body>

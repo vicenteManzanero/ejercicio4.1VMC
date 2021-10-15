@@ -17,11 +17,11 @@ y debe estar debidamente formateado.
 //Con esta declaración hago una optimización del código.
 let doc = document;
 
-//Ahora declaro una variable y guardo todos párrafos del documento
+//Ahora declaro una variable y guardo todos párrafos del documento.
 let numeroParrafos = doc.getElementsByTagName("p").length;
 
 
-//Ahora, declaro otra variable para guardar el texto del segundo párrafo
+//Ahora, declaro otra variable para guardar el texto del segundo párrafo.
 let textoSegundoParrafo = doc.getElementsByTagName("p")[1].innerText;
 
 
@@ -29,7 +29,7 @@ let textoSegundoParrafo = doc.getElementsByTagName("p")[1].innerText;
 let numeroEnlaces = doc.getElementsByTagName("a").length;
 
 
-//Declaración
+//Declaración.
 let direccionEnlace = doc.querySelector("a").href;
 
 
@@ -39,16 +39,19 @@ let penultimoEnlace = enlaces[enlaces.length - 2].href;
 
 //Ahora, lo muestro en el div que pide el ejercicio.
 
+//Primero creo los "p" que van a contener los resultados.
 let resultado = doc.createElement("p");
 let resultado1 = doc.createElement("p");
 let resultado2 = doc.createElement("p");
 let resultado3 = doc.createElement("p");
 let resultado4 = doc.createElement("p");
+//Ahora, inserto el valor de las variables con un texto concatenado para hacer más fácil su lectura.
 resultado.innerHTML = `El número de párrafos en ésta página es :<br>  ${numeroParrafos}`;
 resultado1.innerHTML = `El texto del segundo párrafo es :<br> ${textoSegundoParrafo}`;
 resultado2.innerHTML = `El número de enlaces en ésta página es :<br> ${numeroEnlaces}`;
 resultado3.innerHTML = `La dirección del primer enlace de ésta página es :<br> ${direccionEnlace}`;
 resultado4.innerHTML = `La dirección del penúltimo enlace de ésta página es :<br> ${penultimoEnlace}`;
+//A partir de aquí, lo agrego como hijo al elemento div con id "info".
 doc.getElementById("info").appendChild(resultado);
 doc.getElementById("info").appendChild(resultado1);
 doc.getElementById("info").appendChild(resultado2);
