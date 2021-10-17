@@ -10,7 +10,7 @@ este modo:
 function insertAfter(nuevoElemento, existenteElemento);
 */
 
-
+let doc = document;
 function insertAfter(nuevoElemento,existenteElemento) {
 
     existenteElemento.parentNode.insertBefore(nuevoElemento, existenteElemento.nextSibling);
@@ -18,11 +18,13 @@ function insertAfter(nuevoElemento,existenteElemento) {
 }
 
 //Para hacer la comprobación, creo un elemento span.
-let adios = document.createElement("span");
+let adios = doc.createElement("span");
+//Añado un atributo para diferenciar los 2 "span"con colores distintos.
+adios.setAttribute("id","span2");
 //Añado el texto adios al elemento span.
 adios.innerHTML = "Adiós";
 //Ahora,meto dentro de la variable hola el elemento span con id span.
-let hola = document.getElementById("span");
+let hola = doc.getElementById("span");
 
 
 /*Utilizo el método creado y pongo la variable adios que ha sido creada nueva

@@ -29,10 +29,9 @@ function anadirFila() {
 
 
 function toCani(frase) {
-  console.log(`fila${contador}`);
-  let caniado = doc.getElementById(`fila${contador}`).innerText;
+  frase = doc.getElementById("texto").value;
   //Ahora, convierto la frase introducida a un array para recorrerlo más cómodo.
-  let cadena2 = Array.from(caniado);
+  let cadena2 = Array.from(frase);
   //Éste array es lo que voy a retornar.
   let cadenaRetorno = [];
   //Ahora, hago un for y cambio las "c" mayúsculas y minúsculas por k's.
@@ -49,11 +48,8 @@ function toCani(frase) {
       (cadenaRetorno[i] = cadenaRetorno[i].toUpperCase()):
       (cadenaRetorno[i] = cadenaRetorno[i].toLowerCase());
   }
-  //Antes de hacer el retorno, le concateno las "HHH".
-  //return cadenaRetorno.join("") + "HHH";
-  let resultado = cadenaRetorno.join("") + "HHH"
-  doc.getElementById(`fila${contador}`).innerText = resultado;
-  console.log(resultado);
+  //Antes de hacer el retorno, le concateno las "HHH". Como es un método reutilizado, el retorno lo guardo en una variable.
+  let resultado = cadenaRetorno.join("") + "HHH";
+  //Ahora, lo meto en el "tr" con el id que coincida con el de la fila anterior para que lo sobre escriba.
+  doc.getElementById(`fila${contador-1}`).innerHTML = resultado;
 }
-
-//una cadena cani es como esta
